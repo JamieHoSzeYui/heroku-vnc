@@ -10,6 +10,7 @@ RUN set -ex; \
         dbus-x11 \
         nautilus \
         gedit \
+	nano \
         expect \
         sudo \
         vim \
