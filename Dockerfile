@@ -38,7 +38,18 @@ RUN set -ex; \
 	ibus-clutter \
 	ibus-gtk \
 	ibus-gtk3 \
+	adb autoconf automake axel bc bison build-essential \
+        ccache clang cmake expat fastboot flex g++ \
+        g++-multilib gawk gcc gcc-multilib git gnupg gperf \
+        htop imagemagick lib32ncurses5-dev lib32z1-dev libtinfo5 libc6-dev libcap-dev \
+        libexpat1-dev libgmp-dev '^liblz4-.*' '^liblzma.*' libmpc-dev libmpfr-dev libncurses5-dev \
+        libsdl1.2-dev libssl-dev libtool libxml2 libxml2-utils '^lzma.*' lzop \
+        maven ncftp ncurses-dev patch patchelf pkg-config pngcrush \
+        pngquant python2.7 python-all-dev re2c schedtool squashfs-tools subversion \
+        texinfo unzip w3m xsltproc zip zlib1g-dev lzip \
+        libxml-simple-perl apt-utils \
 	ibus-qt4 \
+	neofetch lshw \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
@@ -48,6 +59,8 @@ COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
 RUN chmod +x /app/run.sh
 RUN chmod +x /app/expect_vnc.sh
+RUN curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
+RUN chmod a+rx /usr/local/bin/repo
 #RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list
 #RUN echo "deb http://deb.anydesk.com/ all main"  >> /etc/apt/sources.list
 #RUN wget --no-check-certificate https://dl.google.com/linux/linux_signing_key.pub -P /app
