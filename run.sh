@@ -47,3 +47,9 @@ EOF
 chmod +x /Desktop/Chromium.desktop
 chmod +x /Desktop/Swicth_to_Chinese_input.sh
 exec supervisord -c /app/supervisord.conf
+
+while :
+do
+	echo "ok"
+	sleep 300
+done
