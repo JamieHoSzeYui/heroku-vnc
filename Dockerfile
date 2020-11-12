@@ -20,6 +20,7 @@ RUN set -ex; \
         socat \
         x11vnc \
 	xvfb \
+	libncurses5 \
         xfce4 \
         supervisor \
         curl \
