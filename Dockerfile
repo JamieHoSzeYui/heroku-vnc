@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN rm -rf /usr/share/dotnet/
 RUN apt-get update &&apt-get install -y --no-install-recommends gnupg software-properties-common
 RUN add-apt-repository universe
-RUN wget -q -O - archive.kali.org/archive-key.asc | apt-key add -
+RUN apt-key adv --keyserver pool.sks-keyservers.net --recv-keys ED444FF07D8D0BF6
 RUN echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
 RUN set -ex; \
     apt-get update \
