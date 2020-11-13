@@ -6,7 +6,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN echo '# Kali linux repositories | Added by Katoolin\ndeb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
 RUN rm -rf /usr/share/dotnet/
 RUN apt-get install -y --no-install-recommends gpgv
-RUN apt-key adv --keyserver pool.sks-keyservers.net --recv-keys ED444FF07D8D0BF6
 
 RUN set -ex; \
     apt-get update \
