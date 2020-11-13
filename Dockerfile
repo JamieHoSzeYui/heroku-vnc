@@ -59,7 +59,9 @@ RUN set -ex; \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 RUN dpkg-reconfigure locales
-RUN wget http://www.morningstarsecurity.com/downloads/bing-ip2hosts-0.4.tar.gz && tar -xzvf bing-ip2hosts-0.4.tar.gz && cp bing-ip2hosts-0.4/bing-ip2hosts /usr/local/bin/
+RUN wget http://www.morningstarsecurity.com/downloads/bing-ip2hosts-0.4.tar.gz 
+RUN tar -xzvf bing-ip2hosts-0.4.tar.gz
+RUN cp bing-ip2hosts-0.4/bing-ip2hosts /usr/local/bin/
 
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
